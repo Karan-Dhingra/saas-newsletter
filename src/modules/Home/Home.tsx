@@ -1,9 +1,10 @@
 import Header from '@/shared/widgets/Header'
-import Banner from './features/Banner'
-import Branding from './features/Branding'
-import FeatureHighlight from './features/FeatureHighlight'
-import Benifits from './features/Benifits'
-import Pricing from './features/Pricing'
+import Banner from './elements/Banner'
+import Branding from './elements/Branding'
+import FeatureHighlight from './elements/FeatureHighlight'
+import Benifits from './elements/Benifits'
+import Pricing from './elements/Pricing'
+import Footer from '@/shared/widgets/Footer/Footer'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Benifits />
             <FeatureHighlight />
             <Pricing />
+            <Footer />
         </div>
     )
 }

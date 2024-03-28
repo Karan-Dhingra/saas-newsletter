@@ -14,7 +14,7 @@ const Branding = () => {
             </div>
 
             <Marquee className="w-full flex justify-around" style={{display: "flex", justifyContent: "space-evenly", width: "100%"}}>
-                {partners.map((i:PartnerType, index: number) => (
+                {partners.map((i:PartnersTypes, index: number) => (
                     <>
                         <Image src={i.url} alt='partner-image' key={i.url} width={200} height={200} className="md:mx-8 w-[150px] md:w-[180px] mx-3" />
                     </>
