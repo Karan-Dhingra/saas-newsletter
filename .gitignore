@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.env
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -21,6 +22,13 @@
 env
 ./env
 /.env
+
+./.env
+.env
+.env.example
+.env.local
+.env.staging
+.*
 
 # misc
 .DS_Store
