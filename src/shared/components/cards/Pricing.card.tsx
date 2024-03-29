@@ -32,8 +32,8 @@ const PricingCard = ({active}: {active: string}) => {
                 <div className="pt-5">
                     <p className="text-xl">What&apos;s included...</p>
                 </div>
-                {freePlan.map((i: PlanType, key: Number) => (
-                    <div key={key} className='flex items-center w-full py-4'>
+                {freePlan.map((i: PlanType, index: number) => (
+                    <div key={index} className='flex items-center w-full py-4'>
                         <span>{ICONS.right}</span>
                         <p className="p-2 text-lg">{i.title}</p>
                     </div>
@@ -71,7 +71,7 @@ const PricingCard = ({active}: {active: string}) => {
                     <p className="text-xl">Everythinh in Launch, plus...</p>
                 </div>
 
-                {GrowPlan.map((i: PlanType, key: Number) => (
+                {GrowPlan.map((i: PlanType, key: number) => (
                     <div key={key} className='flex items-center w-full py-4'>
                         <span>{ICONS.right}</span>
                         <p className="p-2 text-lg">{i.title}</p>

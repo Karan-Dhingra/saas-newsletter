@@ -1,9 +1,7 @@
 import Main from "./elements/main/main"
 
 const Dashboard = () => {
-    return (<div>
-        <Main />
-    </div>)
+    return <Main />
 }
 
 export default Dashboard
