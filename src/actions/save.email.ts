@@ -4,25 +4,21 @@ import Email from "@/models/email.model"
 import { connectDb } from "@/shared/libs/db"
 
 export const saveEmail = async ({title, content, newsLetterOwnerId}: {title: string, content: string, newsLetterOwnerId: string}) => {
-    let a = 0;
     try {
-        a++ //1
       await connectDb();
-        a++ // 2
 
       const email = await Email.findOne({
         title,
         newsLetterOwnerId,
       });
 
-      a++ //3
+      console.log('email', email);
+      
   
       if (email) {
         await Email.findByIdAndUpdate(email._id, {
           content,
         });
-
-        a = 10
     
         return JSON.stringify({ message: "Email updated successfully!" })
       } else {
@@ -31,9 +27,6 @@ export const saveEmail = async ({title, content, newsLetterOwnerId}: {title: str
           content,
           newsLetterOwnerId,
         });
-
-        a = 100
-
         return JSON.stringify({ message: "Email saved successfully!" });
       }
     } catch (error) {

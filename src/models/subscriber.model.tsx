@@ -12,15 +12,16 @@ const subscriberShema = new Schema(
     },
     source: {
       type: String,
+      default: "By Karan Dhingra"
     },
     status: {
       type: String,
+      default: "Subscribed"
     },
   },
   { timestamps: true }
 );
 
-const Subscriber =
-  mongoose.models.Subscribers || mongoose.model("Subscribers", subscriberShema);
+const Subscriber = mongoose.models.Subscribers || mongoose.model("Subscribers", subscriberShema);
 
 export default Subscriber;

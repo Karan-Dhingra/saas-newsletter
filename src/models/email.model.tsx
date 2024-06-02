@@ -18,4 +18,5 @@ const emailSchema = new Schema(
 );
 
 const Email = mongoose.models.Emails || mongoose.model("Emails", emailSchema);
+
 export default Email;
