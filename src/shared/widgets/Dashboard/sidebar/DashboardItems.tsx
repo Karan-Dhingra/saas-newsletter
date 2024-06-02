@@ -23,8 +23,6 @@ const DashboardItems = ({bottomContent}:{bottomContent?:boolean}) => {
         setActiveRoute(pathname)
     }, [pathname, setActiveRoute])
 
-    console.log(activeRoute)
-
     return <>
         {!bottomContent ?(
             <>

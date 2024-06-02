@@ -4,6 +4,7 @@ import {NextUIProvider} from "@nextui-org/react"
 import { usePathname } from "next/navigation";
 import DashboardSidebar from './../widgets/Dashboard/sidebar/Dashboard.sidebar';
 import Dashboard from "@/modules/Dashboard";
+import { Toaster } from "react-hot-toast";
 
 interface ProviderProps {
     children: React.ReactNode
@@ -30,11 +31,13 @@ export default function Providers({children}: ProviderProps){
                         <div className="w-[290px] h-screen overflow-y-scroll">
                             <DashboardSidebar />
                         </div>
-                        <Dashboard />
+                        {children}
                     </div>
                 :
                     <>{children}</>
             }
+
+            <Toaster position="top-center" reverseOrder={false} />
         </NextUIProvider>
     )
 }
