@@ -31,7 +31,7 @@ export async function generateAnalyticsData<T extends Document>(
       year: "numeric",
     });
 
-    const count = await model.countDocuments({
+    const count = await model?.countDocuments({
       createdAt: {
         $gte: startDate,
         $lt: endDate,
