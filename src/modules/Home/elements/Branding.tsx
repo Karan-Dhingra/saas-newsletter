@@ -1,4 +1,4 @@
-import { partners } from '@/app/configs/constants'
+import { partners } from '@/configs/constants'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
 

@@ -10,7 +10,6 @@ import {
   generateApiKey,
   regenerateApiKey,
 } from "@/shared/utils/token.generator";
-import { Snippet } from "@nextui-org/react";
 import { ICONS } from "@/shared/utils/icons";
 import toast from "react-hot-toast";
 

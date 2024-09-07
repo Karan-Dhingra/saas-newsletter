@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { sideBarBottomItems, sideBarItems } from "@/app/configs/constants"
+import { sideBarBottomItems, sideBarItems } from "@/configs/constants"
 import useRouteChange from "@/shared/hooks/useRouteChange"
 import { ICONS } from "@/shared/utils/icons"
 import { useClerk } from "@clerk/nextjs"

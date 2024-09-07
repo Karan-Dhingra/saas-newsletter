@@ -1,6 +1,6 @@
-import { getSubscribers } from '@/actions/get.subscribers'
+import { useCallback, useEffect, useState } from 'react'
+import { getSubscribers } from '@/actions/user.actions'
 import { useClerk } from '@clerk/nextjs'
-import React, { useCallback, useEffect, useState } from 'react'
 
 const useSubscriberData = () => {
     const {user} = useClerk()

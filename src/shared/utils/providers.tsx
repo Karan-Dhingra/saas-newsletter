@@ -1,11 +1,10 @@
 "use client";
-import { useUser } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import {NextUIProvider} from "@nextui-org/react"
 import { usePathname } from "next/navigation";
 import DashboardSidebar from './../widgets/Dashboard/sidebar/Dashboard.sidebar';
-import Dashboard from "@/modules/Dashboard";
 import { Toaster } from "react-hot-toast";
-import { addStripe } from "@/actions/add.stripe";
+import { addStripe } from "@/actions/stripe.actions";
 
 interface ProviderProps {
     children: React.ReactNode
@@ -14,10 +13,17 @@ interface ProviderProps {
 export default function Providers({children}: ProviderProps){
     const pathname = usePathname()
     const {isLoaded, user} = useUser()
+    const { getToken } = useAuth();
 
     const isStripeCustomerIdHas = async() => {
         await addStripe()
     }
+
+    const setToken = async () => {
+        getToken().then((token: any) => {
+            localStorage.setItem('TOKEN', JSON.stringify(token))
+        })
+    };
 
 
     if(!isLoaded){
@@ -25,6 +31,7 @@ export default function Providers({children}: ProviderProps){
     }else{
         if(user){
             isStripeCustomerIdHas()
+            setToken()
         }
     }
 

@@ -1,5 +1,5 @@
-import { stripeSubscribe } from "@/actions/stripe.subscribe"
-import { freePlan, GrowPlan, scalePlan } from "@/app/configs/constants"
+import { stripeSubscribe } from "@/actions/stripe.actions"
+import { freePlan, GrowPlan, scalePlan } from "@/configs/constants"
 import { ICONS } from "@/shared/utils/icons"
 import { useUser } from "@clerk/nextjs"
 import { Button } from "@nextui-org/react"

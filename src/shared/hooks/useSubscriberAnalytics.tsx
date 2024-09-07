@@ -1,6 +1,6 @@
 "use client";
 
-import { subscribersAnalytics } from "@/actions/subscribers.analytics";
+import { subscribersAnalytics } from "@/actions/user.actions";
 import { useEffect, useState } from "react";
 
 const useSubscribersAnalytics = () => {

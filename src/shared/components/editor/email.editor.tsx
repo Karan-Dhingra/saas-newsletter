@@ -1,14 +1,13 @@
 "use client";
 
-import EmailEditor, { EditorRef, EmailEditorProps } from "react-email-editor";
 import React, { useEffect, useRef, useState } from "react";
+import EmailEditor, { EditorRef, EmailEditorProps } from "react-email-editor";
 import { DefaultJsonData } from "@/assets/mails/default";
 import { useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
-import { saveEmail } from "@/actions/save.email";
 import toast from "react-hot-toast";
-import { GetEmailDetails } from "@/actions/get.email-details";
+import { GetEmailDetails, saveEmail } from "@/actions/email.actions";
 // import { sendEmail } from "@/shared/utils/email.sender";
 
 const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
@@ -49,7 +48,7 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
         title: subjectTitle,
         content: JSON.stringify(design),
         newsLetterOwnerId: user?.id!,
-      }).then(json => JSON.parse(json))
+      }).then((json: any) => JSON.parse(json))
       .then((res: any) => {
         console.log(res)
         toast.success(res.message);
@@ -63,8 +62,9 @@ const Emaileditor = ({ subjectTitle }: { subjectTitle: string }) => {
       title: subjectTitle,
       newsLetterOwnerId: user?.id!,
     }).then((res: any) => {
-      if (res) {
-        setJsonData(JSON.parse(res?.content));
+      if (res && res.content) {
+        console.log(res.content)
+        setJsonData(JSON.parse(res.content));
       }
       setLoading(false);
     });

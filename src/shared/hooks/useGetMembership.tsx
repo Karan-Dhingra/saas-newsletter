@@ -1,7 +1,7 @@
 "use client";
 
-import { getMemberShip } from "@/actions/get.membership";
 import { useEffect, useState } from "react";
+import { getMemberShip } from "@/actions/user.actions";
 
 const useGetMembership = () => {
   const [data, setData] = useState<any>([]);

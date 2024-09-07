@@ -1,16 +1,16 @@
-"use client";
-
 import { useUser } from "@clerk/nextjs";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import Image from 'next/image';
+import { useRouter } from "next/navigation";
 
 export const Toolbar = () => {
+    const router = useRouter();
     const {user} = useUser()
 
     return (
         <>
-            <Button color="primary" className="text-lg">
+            <Button color="primary" className="text-lg" onClick={user ? () => {router.push('/dashboard')} : () => {}}>
                 Start Trial
             </Button>
 

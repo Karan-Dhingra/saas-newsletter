@@ -1,4 +1,4 @@
-import { sideBarActiveItem } from "@/app/configs/constants"
+import { sideBarActiveItem } from "@/configs/constants"
 import { useAtom } from "jotai"
 
 const useRouteChange = () => {

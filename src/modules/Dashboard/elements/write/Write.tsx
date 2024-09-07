@@ -6,9 +6,8 @@ import { Button } from "@nextui-org/react"
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast"
 import Link from "next/link";
-import { getEmails } from "@/actions/get-emails";
 import { useClerk } from "@clerk/nextjs";
-import { deleteEmail } from "@/actions/delete-email";
+import { deleteEmail, getEmails } from "@/actions/email.actions";
 
 const Write = () => {
     const router = useRouter();
@@ -47,6 +46,8 @@ const Write = () => {
         FindEmails();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
+
+    console.log(emails)
 
     return <div className="w-full flex p-5 flex-wrap gap-6 relative">
         <div className="w-[200px] h-[200px] bg-slate-50 flex flex-col items-center justify-center rounded border cursor-pointer"

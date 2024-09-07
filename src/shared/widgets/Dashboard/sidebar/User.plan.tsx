@@ -1,4 +1,4 @@
-import { manageSubscription } from "@/actions/manage.subscription";
+import { manageSubscription } from "@/actions/user.actions";
 import useGetMembership from "@/shared/hooks/useGetMembership";
 import useSubscribersData from "@/shared/hooks/useSubscriberData";
 import { ICONS } from "@/shared/utils/icons";

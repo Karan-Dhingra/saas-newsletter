@@ -1,6 +1,6 @@
 "use client"
 
-import { subscribe } from "@/actions/add.subscribe"
+import { subscribe } from "@/actions/user.actions"
 import { useSearchParams } from "next/navigation"
 import { useState } from "react"
 import toast from "react-hot-toast"
@@ -15,6 +15,7 @@ const Page = () => {
     const handleSubmit = async(e: any) => {
         e.preventDefault();
         setLoading(true);
+        
         await subscribe({ email: value, username })
           .then((res : any) => {
             setLoading(false);

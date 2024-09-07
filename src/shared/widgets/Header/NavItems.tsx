@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { navItems } from '../../../app/configs/constants';
+import { navItems } from '../../../configs/constants';
 
 const NavItems = () => {
     return (

@@ -1,4 +1,4 @@
-import { settingsActiveItem } from "@/app/configs/constants";
+import { settingsActiveItem } from "@/configs/constants";
 import { useAtom } from "jotai";
 
 const useSettingsFilter = () => {
